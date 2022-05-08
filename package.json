@@ -1,0 +1,23 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Application to use command line prompts to create a HTML file with a manager, engineers, and interns, with contact and other relevant information.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppepin34/team-profile-generator.git"
+  },
+  "author": "Phil Pepin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ppepin34/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/ppepin34/team-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^28.1.0"
+  }
+}
