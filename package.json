@@ -4,7 +4,7 @@
   "description": "Application to use command line prompts to create a HTML file with a manager, engineers, and interns, with contact and other relevant information.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
