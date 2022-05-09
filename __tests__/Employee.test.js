@@ -1,4 +1,3 @@
-const { default: TestRunner } = require('jest-runner');
 const Employee = require('../lib/Employee');
 
 test('create new employee object', () => {
