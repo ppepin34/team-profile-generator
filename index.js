@@ -78,6 +78,12 @@ const promptEmployees = (teamData) => {
     inquirer
       .prompt([
         {
+          type: "list",
+          name: "role",
+          message: "Is this team-member an engineer or intern?",
+          choices: ["Engineer", "Intern"],
+        },
+        {
           type: "input",
           name: "name",
           message: "What is the employee's name?",
@@ -115,12 +121,6 @@ const promptEmployees = (teamData) => {
               return false;
             }
           },
-        },
-        {
-          type: "list",
-          name: "role",
-          message: "Is this team-member an engineer or intern?",
-          choices: ["Engineer", "Intern"],
         },
         {
           type: "input",
