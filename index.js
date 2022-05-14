@@ -81,7 +81,7 @@ const promptEmployees = (teamData) => {
           type: "list",
           name: "role",
           message: "Is this team-member an engineer or intern?",
-          choices: ["Engineer", "Intern"],
+          choices: ["Engineer", "Intern", "None"],
         },
         {
           type: "input",
