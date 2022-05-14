@@ -14,7 +14,7 @@ test('create new intern object', () => {
 
 test("get intern's school", () => {
     let school = 'vcu'
-    const intern = new Intern('Dave', 1, 'this', school);
+    const intern = new Intern('Dave', '1', 'this', school);
 
     expect(intern.getSchool()).toBe('vcu');
 })

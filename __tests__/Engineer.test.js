@@ -3,7 +3,7 @@ const Engineer = require('../lib/Engineer');
 test('create new Engineer object', () => {
 
     var name = 'Dave';
-    var id = 123;
+    var id = '123';
     var email = 'this@gmail.com';
     var github = 'dave123';
 
@@ -23,7 +23,7 @@ test('get Engineer Role', () => {
 test("get engineer's github", () => {
 
     var github = 'dave123';
-    const engineer = new Engineer('Dave', 1, 'email', github);
+    const engineer = new Engineer('Dave', '1', 'email', github);
 
     expect(engineer.getGithub()).toBe('dave123')
 })

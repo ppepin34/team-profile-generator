@@ -19,16 +19,16 @@ test("get employee's name", () => {
 
 test("get employee's ID", () => {
 
-    var id = 123
+    var id = '123'
     const employee = new Employee('dave', id);
     
-    expect(employee.getId()).toBe(123);
+    expect(employee.getId()).toBe('123');
 })
 
 test("get employee's email", () => {
 
     var email = 'this@gmail.com'
-    const employee = new Employee('Dave', 1, email);
+    const employee = new Employee('Dave', '1', email);
 
     expect(employee.getEmail()).toBe('this@gmail.com')
 })
