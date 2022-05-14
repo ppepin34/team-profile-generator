@@ -1,18 +1,22 @@
 const Intern = require('../lib/Intern');
 
-jest.mock('../lib/Employee');
-
 test('create new intern object', () => {
-    const intern = new Intern('Dave');
+    let name = 'Dave';
+    let id = 1;
+    let email = 'dave@gmail.com';
+    let school = 'vcu';
 
-    expect(intern.school).toEqual(expect.any(String));
+    const intern = new Intern(name, id, email, school);
+
+    expect(intern.school).toBe('vcu');
     expect(intern.role).toBe('Intern');
 })
 
 test("get intern's school", () => {
-    const intern = new Intern('Dave');
+    let school = 'vcu'
+    const intern = new Intern('Dave', 1, 'this', school);
 
-    expect(intern.getSchool()).toEqual(expect.any(String));
+    expect(intern.getSchool()).toBe('vcu');
 })
 
 test("get intern's role", () => {
