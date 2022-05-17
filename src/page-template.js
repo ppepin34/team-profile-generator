@@ -60,6 +60,7 @@ const generateCards = employees => {
     })
 };
 module.exports = team => {
+    console.log(team.employees)
     return `
     <!DOCTYPE html>
 <html lang="en">
