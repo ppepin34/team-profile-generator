@@ -3,8 +3,9 @@ const Engineer = require('../lib/Engineer');
 const Intern = require('../lib/Intern');
 
 const generateCards = employees => {
+  // console.log(employees);
     employees.forEach(employee => {
-        if (role = 'Manager') {
+        if (employee.role = 'Manager') {
             return `
             <div class="col col-md-6 col-lg-4 mb-4">
                 <div class="card">
@@ -22,7 +23,7 @@ const generateCards = employees => {
                 </div>
             </div>
             `
-        } else if (role = 'Engineer') {
+        } else if (employee.role = 'Engineer') {
             return `
             <div class="col col-md-6 col-lg-4 mb-4">
             <div class="card">
@@ -40,7 +41,7 @@ const generateCards = employees => {
             </div>
           </div>
             `
-        } else if (role = 'Intern') {
+        } else if (employee.role = 'Intern') {
             return `
             <div class="col col-md-6 col-lg-4 mb-4">
           <div class="card">
@@ -60,7 +61,7 @@ const generateCards = employees => {
     })
 };
 module.exports = team => {
-    console.log(team.employees)
+    console.log(team)
     return `
     <!DOCTYPE html>
 <html lang="en">
@@ -81,11 +82,11 @@ module.exports = team => {
     <main>
     <div id="employees" class="container">
     <div class="row justify-content-around">
-    ${generateCards(team.employees)}
+    ${generateCards(team)}
     </div>
     </div>
     </main>
     </body>
     </html>
     `
-}
+};
