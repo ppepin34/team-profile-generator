@@ -5,54 +5,56 @@ const Intern = require('../lib/Intern');
 const generateCards = employees => {
   // console.log(employees);
     employees.forEach(employee => {
-        if (employee.role = 'Manager') {
+      console.log("employee.manager.getRole(): " + employee.Manager.getRole() );
+        if (employee.Manager.getRole()) {
+          console.log(employee.getName());
             return `
             <div class="col col-md-6 col-lg-4 mb-4">
                 <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">${this.getName}</h5>
+                    <h5 class="card-title">${employee.getName()}</h5>
                     <h6 class="card-subtitle manager">Manager</h6>
                     <div class="">
-                        <div class="id">${this.getId}</div>
+                        <div class="id">${employee.getId()}</div>
                         <div class="email">
-                        Email: <a href="mailto: ${this.getEmail}">${this.getEmail}</a>
+                        Email: <a href="mailto: ${employee.getEmail()}">${employee.getEmail()}</a>
                         </div>
-                        <div class="office">${this.getOffice}</div>
+                        <div class="office">${employee.getOffice()}</div>
                     </div>
                     </div>
                 </div>
             </div>
             `
-        } else if (employee.role = 'Engineer') {
+        } else if (employee.Engineer.getRole()) {
             return `
             <div class="col col-md-6 col-lg-4 mb-4">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">${this.name}</h5>
+                <h5 class="card-title">${employee.getName()}</h5>
                 <h6 class="card-subtitle engineer">Engineer</h6>
-                <div class="id">${this.getId}</div>
+                <div class="id">${employee.getId()}</div>
                 <div class="email">
-                  Email: <a href="mailto: ${this.getEmail}">${this.getEmail}</a>
+                  Email: <a href="mailto: ${employee.getEmail()}">${employee.getEmail()}</a>
                 </div>
                 <div class="github">
-                  Github: <a href="http://github.com/${this.github}">github.com/${this.github}</a>
+                  Github: <a href="http://github.com/${employee.getGithub()}">github.com/${employee.getGithub()}</a>
                 </div>
               </div>
             </div>
           </div>
             `
-        } else if (employee.role = 'Intern') {
+        } else if (employee.getRole() = 'Intern') {
             return `
             <div class="col col-md-6 col-lg-4 mb-4">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">${this.name}</h5>
+              <h5 class="card-title">${employee.getName()}</h5>
               <h6 class="card-subtitle intern">Intern</h6>
-              <div class="id">${this.id}</div>
+              <div class="id">${employee.getId()}</div>
               <div class="email">
-                Email: <a href="mailto: ${this.email}"${this.email}</a>
+                Email: <a href="mailto: ${employee.getEmail()}"${employee.getEmail()}</a>
               </div>
-              <div class="school">${this.school}</div>
+              <div class="school">${employee.getSchool()}</div>
             </div>
           </div>
         </div>
@@ -61,6 +63,7 @@ const generateCards = employees => {
     })
 };
 module.exports = team => {
+  // const generatePage = team => {
     console.log(team)
     return `
     <!DOCTYPE html>
@@ -90,3 +93,5 @@ module.exports = team => {
     </html>
     `
 };
+
+// module.exports = generatePage()
