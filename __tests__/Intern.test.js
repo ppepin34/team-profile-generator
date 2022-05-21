@@ -9,7 +9,6 @@ test('create new intern object', () => {
     const intern = new Intern(name, id, email, school);
 
     expect(intern.school).toBe('vcu');
-    expect(intern.role).toBe('Intern');
 })
 
 test("get intern's school", () => {

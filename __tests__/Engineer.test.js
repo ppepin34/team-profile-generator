@@ -11,7 +11,6 @@ test('create new Engineer object', () => {
 
     expect(engineer.github).toBe('dave123');
     expect(engineer.name).toBe('Dave');
-    expect(engineer.role).toBe('Engineer');
 })
 
 test('get Engineer Role', () => {

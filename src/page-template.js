@@ -4,35 +4,42 @@ const Intern = require('../lib/Intern');
 
 const generateCards = employees => {
   // console.log(employees);
-    employees.forEach(employee => {
-      console.log("employee.manager.getRole(): " + employee.Manager.getRole() );
-        if (employee.Manager.getRole()) {
-          console.log(employee.getName());
-            return `
+  // create array empty parent array
+  processedHTML = [];
+
+  employees.forEach(employee => {
+    // filter through each class
+    
+    // map each class through code literal
+    // push each generated literal to array
+    // join objects in array as singe code literal
+    if (employee.getRole() === 'Manager') {
+      console.log(employee.getName());
+      processedHTML.push( `
             <div class="col col-md-6 col-lg-4 mb-4">
                 <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">${employee.getName()}</h5>
                     <h6 class="card-subtitle manager">Manager</h6>
                     <div class="">
-                        <div class="id">${employee.getId()}</div>
+                        <div class="id">ID: ${employee.getId()}</div>
                         <div class="email">
                         Email: <a href="mailto: ${employee.getEmail()}">${employee.getEmail()}</a>
                         </div>
-                        <div class="office">${employee.getOffice()}</div>
+                        <div class="office">Office: ${employee.getOffice()}</div>
                     </div>
                     </div>
                 </div>
             </div>
-            `
-        } else if (employee.Engineer.getRole()) {
-            return `
+            `)
+    } else if (employee.getRole() === 'Engineer') {
+      processedHTML.push( `
             <div class="col col-md-6 col-lg-4 mb-4">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">${employee.getName()}</h5>
                 <h6 class="card-subtitle engineer">Engineer</h6>
-                <div class="id">${employee.getId()}</div>
+                <div class="id">ID: ${employee.getId()}</div>
                 <div class="email">
                   Email: <a href="mailto: ${employee.getEmail()}">${employee.getEmail()}</a>
                 </div>
@@ -42,30 +49,32 @@ const generateCards = employees => {
               </div>
             </div>
           </div>
-            `
-        } else if (employee.getRole() = 'Intern') {
-            return `
+            `)
+    } else if (employee.getRole() === 'Intern') {
+      processedHTML.push( `
             <div class="col col-md-6 col-lg-4 mb-4">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">${employee.getName()}</h5>
               <h6 class="card-subtitle intern">Intern</h6>
-              <div class="id">${employee.getId()}</div>
+              <div class="id">ID: ${employee.getId()}</div>
               <div class="email">
-                Email: <a href="mailto: ${employee.getEmail()}"${employee.getEmail()}</a>
+                Email: <a href="mailto: ${employee.getEmail()}">${employee.getEmail()}</a>
               </div>
-              <div class="school">${employee.getSchool()}</div>
+              <div class="school">School: ${employee.getSchool()}</div>
             </div>
           </div>
         </div>
-            `
-        }
-    })
+            `)
+    }
+  });
+
+  let finishedHTML = processedHTML.join('');
+  return finishedHTML
+  
 };
 module.exports = team => {
-  // const generatePage = team => {
-    console.log(team)
-    return `
+  return `
     <!DOCTYPE html>
 <html lang="en">
   <head>
